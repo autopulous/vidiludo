@@ -10,7 +10,7 @@
     <ApplicationIcon>
     </ApplicationIcon>
     <AssemblyKeyContainerName />
-    <AssemblyName>SpaceInvadersFromInvadersSpace</AssemblyName>
+    <AssemblyName>SpaceInvaders</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
@@ -21,7 +21,7 @@
     <StartupObject />
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>0.0</OldToolsVersion>
@@ -40,6 +40,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -58,6 +59,7 @@
     <WarningLevel>4</WarningLevel>
     <DebugType>full</DebugType>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -76,6 +78,7 @@
     <WarningLevel>4</WarningLevel>
     <DebugType>none</DebugType>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -103,6 +106,7 @@
     <Compile Include="Bullet.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Shell.cs" />
     <Compile Include="SoundEffect.cs" />
     <Compile Include="Sprite.cs" />
     <Compile Include="Form.cs">
@@ -148,6 +152,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1167,6 +1172,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\saucer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tuplemetry\Tuplemetry\Tiplemetry.csproj">
+      <Project>{b88852a8-02e9-401d-a185-58948ddf3ad2}</Project>
+      <Name>Tiplemetry</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

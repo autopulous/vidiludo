@@ -1,0 +1,9 @@
+Background images:
+------------------
+
+HD 1080 (1080i, 1080p), FullHD (FHD), (1920 × 1080)
+
+Audio resources:
+----------------
+
+Comment contains a volume percentage - louder sounds stop quieter sound playback

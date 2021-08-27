@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vidiludo", "Vidiludo.csproj", "{4B5B2A34-984A-4B32-A57A-2B6224CA21F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuplemetry", "..\Tuplemetry\Tuplemetry\Tuplemetry.csproj", "{B88852A8-02E9-401D-A185-58948DDF3AD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiplemetry", "..\Tuplemetry\Tuplemetry\Tiplemetry.csproj", "{B88852A8-02E9-401D-A185-58948DDF3AD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VidiludoTester", "..\VidiludoTester\VidiludoTester.csproj", "{36B88182-7179-4FF2-B39C-9FC813828B62}"
 EndProject

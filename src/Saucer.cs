@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
+using Tuplemetry;
 
 namespace Vidiludo 
 {
@@ -12,11 +13,19 @@ namespace Vidiludo
 
         public int ScoreValue;
 
-        public bool Exploding;
+        /// <summary>
+        /// Saucer state
+        /// </summary>
 
-        public int ExplosionAnimation;
+        public bool Exploding { get; set; }
 
-		public bool Vaporized;
+        /// <summary>
+        /// Saucer state
+        /// </summary>
+
+        public bool Vaporized { get; set; }
+
+        public int ExplosionAnimation = 0;
 
 		private int MovementIncrement;
 		private int Frame;
@@ -39,15 +48,6 @@ namespace Vidiludo
 
             Position.Y = 10;
 
-            Reset();
-		}
-
-		public void Reset()
-		{
-			Vaporized = false;
-			Exploding = false;
-			ExplosionAnimation = 0;
-
             ScoreValue = Randomizer.Next(1, 4) * 50;
 
             if (0 == Randomizer.Next() % 2)
@@ -60,6 +60,9 @@ namespace Vidiludo
                 MovementIncrement = -10;
                 Position.X = 700;
             }
+
+            Exploding = false;
+            Vaporized = false;
 
             UpdateBounds();
 		}

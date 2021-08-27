@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Drawing;
+using Tuplemetry;
 
 namespace Vidiludo
 {
@@ -20,6 +21,8 @@ namespace Vidiludo
 
         public Turret(Form Form) : base(Form)
         {
+            X = Form.ClientRectangle.Left + ((Form.ClientRectangle.Width - Width) / 2);
+            Y = Form.ClientRectangle.Bottom - 50;
         }
      
         public void Leftward()
@@ -42,11 +45,11 @@ namespace Vidiludo
             AnimateExplosion(15, ExplosionSoundEffect);
         }
 
-        public Point Gunpoint
+        public Coordinate Gunpoint
 		{
             get
             {
-                return new Point(Left + Width / 2, Top - 10);
+                return new Coordinate(Left + Width / 2, Top - 10);
             }
 		}
 	}

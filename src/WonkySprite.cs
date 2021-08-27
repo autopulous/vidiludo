@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
+using Tuplemetry;
 
 namespace Vidiludo
 {
@@ -9,10 +10,17 @@ namespace Vidiludo
     {
         protected Image Frame0 = null;
 
-        public Point Position = new Point();
+        public Coordinate Position = new Coordinate();
 
-        protected Rectangle ImageBounds = new Rectangle();
-        protected Rectangle MovingBounds = new Rectangle();
+        protected Polygon ImageBounds = new Polygon();
+        protected Polygon MovingBounds = new Polygon();
+
+        /// <summary>
+        /// Saucer state
+        /// </summary>
+
+        public int Width { get; private set; }
+        public int Height { get; private set; }
 
         public WonkySprite()
         {
@@ -26,27 +34,11 @@ namespace Vidiludo
             Image.SelectActiveFrame(FrameDimension.Time, 0);
             Frame0 = Properties.Resources.ResourceManager.GetObject(ImageName) as Image;
 
-            ImageBounds.Width = Frame0.Width;
-            ImageBounds.Height = Frame0.Height;
+            Width = Frame0.Width;
+            Height = Frame0.Height;
         }
 
-        public int Width
-        {
-            get
-            {
-                return ImageBounds.Width;
-            }
-        }
-
-        public int Height
-        {
-            get
-            {
-                return ImageBounds.Height;
-            }
-        }
-
-        public virtual Rectangle GetBounds()
+        public virtual Polygon GetBounds()
         {
             return MovingBounds;
         }
@@ -55,14 +47,14 @@ namespace Vidiludo
         {
             MovingBounds = ImageBounds;
 
-            MovingBounds.Offset(Position);
+            MovingBounds.Offset(Position.X, Position.Y);
         }
 
         public virtual void Draw(Graphics g)
         {
             UpdateBounds();
 
-            g.DrawImage(Frame0, MovingBounds, 0, 0, ImageBounds.Width, ImageBounds.Height, GraphicsUnit.Pixel);
+            g.DrawImage(Frame0, MovingBounds, 0, 0, Width, Height, GraphicsUnit.Pixel);
         }
     }
 }

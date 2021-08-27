@@ -20,7 +20,6 @@ namespace Vidiludo
 		private Turret Turret = null;
 
         private Saucer Saucer = null;
-		private bool SaucerFlying = false;
         private int SaucerSpawnTickInterval = 400;
 
         private bool ShellFired = false;
@@ -94,24 +93,12 @@ namespace Vidiludo
 
             this.KeyDown += new KeyEventHandler(this.Form_KeyDown);
             this.KeyUp += new KeyEventHandler(this.Form_KeyUp);
-            this.Load += new EventHandler(this.Form_Main_Load);
             this.Paint += new PaintEventHandler(this.Form_Main_Paint);
 
             this.ResumeLayout(false);
         }
 
 		#endregion
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && null != components) components.Dispose();
-
-            base.Dispose(disposing);
-        }
-
-        private void Form_Main_Load(object sender, EventArgs e)
-        {
-        }
 
         static void Main()
 		{
@@ -132,9 +119,50 @@ namespace Vidiludo
 
             Score = new ScoreBoard(ClientRectangle.Right, 50);
 
-            InitializeAllGameObjects(0);
+            InitializeGameObjects(0);
 
             Timer.Start();
+        }
+
+        private void InitializeGameObjects(Int32 Level)
+        {
+            if (0 == Level)
+            {
+                Score.NewGame();
+            }
+
+            Turret = new Turret(this);
+
+            InitializeBunkers();
+
+            InitializeInvaderRows(Level);
+        }
+
+        private void InitializeBunkers()
+        {
+            for (int Bunker = 0; Bunker < BunkerQuantity; Bunker++)
+            {
+                Bunkers[Bunker] = new Bunker();
+                Bunkers[Bunker].UpdateBounds();
+                Bunkers[Bunker].Position.X = (Bunkers[Bunker].GetBounds().Width + 75) * Bunker + 25;
+                Bunkers[Bunker].Position.Y = ClientRectangle.Bottom - (Bunkers[Bunker].GetBounds().Height + 75);
+            }
+        }
+
+        void InitializeInvaderRows(int level)
+        {
+            InvaderRows[0] = new InvaderRow("invader_1a", "invader_1b", 2 + level);
+            InvaderRows[1] = new InvaderRow("invader_2a", "invader_2b", 3 + level);
+            InvaderRows[2] = new InvaderRow("invader_2a", "invader_2b", 4 + level);
+            InvaderRows[3] = new InvaderRow("invader_3a", "invader_3b", 5 + level);
+            InvaderRows[4] = new InvaderRow("invader_3a", "invader_3b", 6 + level);
+
+            AttackingInvaderTickInterval = 6;
+        }
+
+        private void InitializeSaucer()
+        {
+            Saucer = new Saucer("saucer");
         }
 
         private void Form_Main_Paint(object sender, PaintEventArgs e)
@@ -154,7 +182,7 @@ namespace Vidiludo
 			  Shell.Draw(g);
 			}
 
-			if (SaucerFlying)
+			if (null != Saucer)
 			{
 			  Saucer.Draw(g);
 			}
@@ -165,57 +193,6 @@ namespace Vidiludo
 				Invaders.Draw(g);
 			}
 		}
-
-        private void InitializeAllGameObjects(Int32 Level)
-        {
-            if (0 == Level)
-            {
-                Score.NewGame();
-            }
-
-            InitializeBunkers();
-
-            InitializeTurret();
-
-            InitializeInvaderRows(Level);
-
-            Saucer = new Saucer("saucer");
-
-            AttackingInvaderTickInterval = 6;
-        }
-
-        private void InitializeBunkers()
-        {
-            for (int Bunker = 0; Bunker < BunkerQuantity; Bunker++)
-            {
-                Bunkers[Bunker] = new Bunker();
-                Bunkers[Bunker].UpdateBounds();
-                Bunkers[Bunker].Position.X = (Bunkers[Bunker].GetBounds().Width + 75) * Bunker + 25;
-                Bunkers[Bunker].Position.Y = ClientRectangle.Bottom - (Bunkers[Bunker].GetBounds().Height + 75);
-            }
-        }
-
-        private void InitializeTurret()
-        {
-            Turret = new Turret(this);
-            Turret.X = ClientRectangle.Left + ((ClientRectangle.Width - Turret.Width) / 2);
-            Turret.Y = ClientRectangle.Bottom - 50;
-        }
-
-        void InitializeInvaderRows(int level)
-        {
-            InvaderRows[0] = new InvaderRow("invader_1a", "invader_1b", 2 + level);
-            InvaderRows[1] = new InvaderRow("invader_2a", "invader_2b", 3 + level);
-            InvaderRows[2] = new InvaderRow("invader_2a", "invader_2b", 4 + level);
-            InvaderRows[3] = new InvaderRow("invader_3a", "invader_3b", 5 + level);
-            InvaderRows[4] = new InvaderRow("invader_3a", "invader_3b", 6 + level);
-        }
-
-        private void InitializeSaucer()
-        {
-            Saucer.Reset();
-            SaucerFlying = true;
-        }
 
         private Int64 FurthestLeft()
         {
@@ -332,11 +309,11 @@ namespace Vidiludo
 			}
 		}
 
-		void TestBulletCollision()
+		void TestShellCollision()
 		{
             if (!ShellFired) return;
 
-            if (SaucerFlying && Saucer.GetBounds().IntersectsWith(Shell.GetBounds()))
+            if (null != Saucer && Saucer.GetBounds().IntersectsWith(Shell.GetBounds()))
             {
                 Saucer.Exploding = true;
                 Score.Score(Saucer.ScoreValue);
@@ -465,34 +442,34 @@ namespace Vidiludo
 			{
 				InitializeSaucer();
                 Audio.Play(Properties.Resources.Rayshot__14_, 11500);
-				SaucerFlying = true;
+                Saucer = new Saucer("saucer"); ;
 			}
 
-			if (SaucerFlying == true)
+			if (null != Saucer)
 			{
 				Saucer.Move();
 
 				if (Saucer.GetBounds().Left > ClientRectangle.Right)
 				{
-				  SaucerFlying = false;
+				  Saucer = null;
 				}
 			}
 
             if (0 > Shell.Position.Y) ShellFired = false;
 
-            TestBulletCollision();
+            TestShellCollision();
 
             if (0 == TickCount % AttackingInvaderTickInterval)
             {
                 MoveInvaders();
 
-                TestBulletCollision();
+                TestShellCollision();
             }
 
             switch (CountInvaders())
             {
                 case 0: // level cleared
-                    InitializeAllGameObjects(Level++);			
+                    InitializeGameObjects(Level++);			
                     break;
                 case 1: // last invader
                     AttackingInvaderTickInterval = 2;
@@ -545,7 +522,7 @@ namespace Vidiludo
 
         private void menuItemRestart_Click(object sender, EventArgs e)
 		{
-			this.InitializeAllGameObjects(0);
+			this.InitializeGameObjects(0);
 		}
 
         private void HandleKeys()
@@ -557,8 +534,10 @@ namespace Vidiludo
                     break;
 
                 case "Space":
-                    if (!ShellFired)
+                    if (null == Shell)
                     {
+                        Shell = new Shell(Turret.Gunpoint, "shell");
+
                         Shell.Position = Turret.Gunpoint;
                         ShellFired = true;
                         Audio.Play(Properties.Resources.Gunshot__1_, 1000);
@@ -586,6 +565,13 @@ namespace Vidiludo
                 default:
                     break;
             }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && null != components) components.Dispose();
+
+            base.Dispose(disposing);
         }
     }
 }
