@@ -1,0 +1,1176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.0.9372</ProductVersion>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ProjectGuid>{4B5B2A34-984A-4B32-A57A-2B6224CA21F7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName />
+    <AssemblyName>SpaceInvadersFromInvadersSpace</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Vidiludo</RootNamespace>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Audio.cs" />
+    <Compile Include="Bomb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bullet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SoundEffect.cs" />
+    <Compile Include="Sprite.cs" />
+    <Compile Include="Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameLoop.cs" />
+    <Compile Include="WonkySprite.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Invader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvaderRow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Turret.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Saucer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScoreBoard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bunker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Air Wrench %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Air Wrench %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %288%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %289%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %2810%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %2812%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %2813%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %2814%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %2815%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm %2816%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x2 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x4 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x5 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x8 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x8 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x8 %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x9 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x16 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x17 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x20 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm x32 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applause %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applause %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applause %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beat %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beat %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beat %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beat x39 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell %2810%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell %2811%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell %2812%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell x12 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %288%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %289%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %2810%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buzz %2811%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cat %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cat %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cat %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cow %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crash %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crash %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crash %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crowing %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crowing %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dial Tone %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialing %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialing %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialing %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialing %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialing %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialing %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialing x10 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Digging %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drop %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %288%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion %289%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fire %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flyby %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flyby %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flyby %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flyby %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flyby %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flyby %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flyby %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frogs %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glass %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glass %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guncock %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %288%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %289%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2810%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2811%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2812%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2813%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2814%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2815%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2816%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2817%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2818%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2819%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2820%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2821%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2822%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2823%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot %2824%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x2 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x2 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x3 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x3 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x3 %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x3 %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x3 %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x3 %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x4 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x4 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x5 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x5 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x5 %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x6 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x7 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x8 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x8 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x8 %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x8 %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x9 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x10 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x11 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x11 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x13 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x15 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x17 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x18 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x19 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x19 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x24 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x26 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x27 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x28 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gunshot x31 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Helicopter %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn x2 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn x2 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horn x2 %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Instrumental %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knock x3 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Landing %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Landing %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Liftoff %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Liftoff %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Missle Strike %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %288%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %289%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %2811%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %2812%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modem %2813%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monster %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monster %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monster x2 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monster x4 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Newflash %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone Call %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ping x4 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ping x8 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plane Crash %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pop %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pop %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pop %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Projector %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Punch %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Punch %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Punch %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Punch %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Punch %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Radio %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rattle %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %288%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %289%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %2810%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %2811%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %2812%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %2813%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rayshot %2814%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Register %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rolling %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shaking %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sizzle %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stomp %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stomp x24 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telegraph %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telephone %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telephone %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telephone %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telephone %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telephone x4 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telephone x8 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telephone x9 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telephone x9 %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thunder %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thunder %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick Tock %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick Tock %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick Tock x16 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick Tock x35 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %288%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %289%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2810%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2811%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2812%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2813%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2814%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2815%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2816%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2817%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2818%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2819%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2820%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2821%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2822%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2823%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2824%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2825%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2826%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2827%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2828%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2829%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone %2830%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone x2 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone x3 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone x8 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tone x18 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Train %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Train %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Train %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vortex %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vortex %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %283%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %284%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %285%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %286%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %287%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %288%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water %289%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Whip %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Whip %282%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 1a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 1b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 1c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 1d.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 2a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 2b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 2c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 2d.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 3a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 3b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 3c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 3d.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 4a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 4b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 4c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 4d.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 5a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 5b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 5c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background 5d.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\design notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bunker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader1c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader2c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader3c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turret.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader 1a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader 1b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader 2a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader 2b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader 3a.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invader 3b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\O Spin %28Crimson%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\saucer.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>
